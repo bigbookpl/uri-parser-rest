@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fd5eaba1dfb3be1398a5f73e179100f7",
+    "hash": "216c42293b41716367dd99c35240fb36",
     "content-hash": "1d1f10e58abdacb3fa1430f7d7484002",
     "packages": [
         {
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/bigbookpl/uri-parser.git",
-                "reference": "b71a5613d712c1a1b6ec36f6fd37173917fe0502"
+                "reference": "07e24d4c810f3da0c304a480392eb9d0aebae7d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bigbookpl/uri-parser/zipball/b71a5613d712c1a1b6ec36f6fd37173917fe0502",
-                "reference": "b71a5613d712c1a1b6ec36f6fd37173917fe0502",
+                "url": "https://api.github.com/repos/bigbookpl/uri-parser/zipball/07e24d4c810f3da0c304a480392eb9d0aebae7d3",
+                "reference": "07e24d4c810f3da0c304a480392eb9d0aebae7d3",
                 "shasum": ""
             },
             "require": {
@@ -50,7 +50,7 @@
                 "source": "https://github.com/bigbookpl/uri-parser/tree/master",
                 "issues": "https://github.com/bigbookpl/uri-parser/issues"
             },
-            "time": "2017-03-20 16:34:58"
+            "time": "2017-03-20 20:33:04"
         },
         {
             "name": "container-interop/container-interop",

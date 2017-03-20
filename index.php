@@ -1,27 +1,35 @@
 <?php
 
-    use Bigbookpl\UriParser\Parser\ParsedURI;
-    use Bigbookpl\UriParser\SchemeResolver;
+use Bigbookpl\UriParser\Parser\ParserException;
+use Bigbookpl\UriParser\SchemeResolver;
+use Bigbookpl\UriParser\Validator\ValidationException;
 
-    require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
-    $config = ['settings' => [
-        'addContentLengthHeader' => false,
-    ]];
 
-    $app = new \Slim\App($config);
+$app = new \Slim\App();
 
-    $app->post('/validate', function ($request, $response, $args) {
+$app->post('/parse', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args) {
 
-    $resolver = new SchemeResolver("http://www.onet.pl/hhhj/dfjhdsj?dhjdshd=jhds#jfhs");
+    $uri = $request->getParsedBodyParam('uri');
+
+    if (!$uri) {
+        return $response->withStatus(400)->write('URI not found');
+    }
+
+    $resolver = new SchemeResolver($uri);
     $validator = $resolver->getValidator();
 
-    if ($validator->validate()) {
-
+    try {
+        $validator->validate();
         $parsed = $resolver->getParser()->getParsed();
 
-        return $response->withJSON( $parsed );
-    }
-    });
+        return $response->withJson($parsed);
 
-    $app->run();
+    } catch (ValidationException | ParserException $e) {
+        return $response->withStatus(400)->write($e->getMessage());
+    }
+
+});
+
+$app->run();

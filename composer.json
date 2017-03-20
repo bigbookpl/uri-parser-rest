@@ -1,6 +1,6 @@
 {
     "name": "bigbookpl/uri-parser-rest",
-    "description": "URI parser REST",
+    "description": "URI parser REST server",
     "type": "project",
     "repositories": [
         {
@@ -11,7 +11,7 @@
     "require": {
         "php": ">=7.1",
         "slim/slim": "^3.1",
-        "bigbookpl/uri-parser": "*"
+        "bigbookpl/uri-parser": "1.*"
     },
     "autoload": {
         "psr-4": { "": ["src/", "test/"] }
@@ -23,8 +23,7 @@
         }
     ],
     "scripts": {
-        "start": "php -S 0.0.0.0:8080 -t public public/index.php",
-        "test": "phpunit"
+        "start": "php -S 0.0.0.0:8080 index.php"
     },
     "minimum-stability": "dev"
 }
