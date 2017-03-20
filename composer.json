@@ -1,0 +1,30 @@
+{
+    "name": "bigbookpl/uri-parser-rest",
+    "description": "URI parser REST",
+    "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/bigbookpl/uri-parser"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "slim/slim": "^3.1",
+        "bigbookpl/uri-parser": "*"
+    },
+    "autoload": {
+        "psr-4": { "": ["src/", "test/"] }
+    },
+    "authors": [
+        {
+            "name": "Krzysztof Konieczny",
+            "email": "bigbook.pl@gmail.com"
+        }
+    ],
+    "scripts": {
+        "start": "php -S 0.0.0.0:8080 -t public public/index.php",
+        "test": "phpunit"
+    },
+    "minimum-stability": "dev"
+}
